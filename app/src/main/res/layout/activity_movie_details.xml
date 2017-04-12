@@ -11,8 +11,11 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/colorPrimaryDark"
-        android:gravity="left|center_vertical"
+        android:gravity="start|center_vertical"
+        android:paddingEnd="20dp"
         android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingStart="20dp"
         android:text="@string/movie_title"
         android:textSize="40sp" />
 
@@ -24,50 +27,68 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="4">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp">
 
-            <ImageView
-                android:id="@+id/iv_movie_thumbnail"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/contain_movie_thumbnail_date_rating"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="8dp"
-                android:adjustViewBounds="true" />
-
-            <TextView
-                android:id="@+id/tv_movie_release_date"
-                style="@style/TextAppearance.AppCompat.Display1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
-                android:layout_toRightOf="@id/iv_movie_thumbnail"
-                android:text="@string/release_date" />
+                android:orientation="horizontal"
+                android:weightSum="5">
 
-            <TextView
-                android:id="@+id/tv_movie_rating"
-                style="@style/TextAppearance.AppCompat.Display3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_movie_release_date"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="8dp"
-                android:layout_toRightOf="@id/iv_movie_thumbnail"
-                android:text="@string/movie_rating" />
+                <ImageView
+                    android:id="@+id/iv_movie_thumbnail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="2" />
+
+                <LinearLayout
+                    android:id="@+id/contain_movie_date_rating"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_movie_release_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="@string/release_date"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/tv_movie_rating"
+                        android:textSize="40sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="@string/movie_rating" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_movie_overview"
                 style="@style/TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_movie_thumbnail"
-                android:paddingBottom="16dp"
+                android:layout_below="@id/contain_movie_thumbnail_date_rating"
                 android:layout_marginTop="16dp"
+                android:paddingBottom="16dp"
                 android:text="@string/movie_overview" />
 
         </RelativeLayout>
