@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Your Movie Database</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="release_date">1991-03-20</string>
+    <string name="movie_rating">8/10</string>
+    <string name="movie_overview">This is quite a big text so that it can display what I need to see i.e. is whether it looks good on the screen or not. This means that it should tak more than 2 lines so that I can make the necessary adjustments.</string>
+</resources>
